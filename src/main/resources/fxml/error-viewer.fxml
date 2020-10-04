@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="400.0" prefWidth="600.0" styleClass="background" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="message" maxWidth="1.7976931348623157E308" styleClass="title" text="Категория&#10;Jib,&#10;" wrapText="true" VBox.vgrow="ALWAYS">
+         <padding>
+            <Insets bottom="10.0" left="20.0" right="10.0" top="10.0" />
+         </padding>
+      </Label>
+      <TextArea fx:id="errorField" editable="false" maxHeight="1.7976931348623157E308" VBox.vgrow="ALWAYS" />
+      <HBox alignment="CENTER_RIGHT" prefWidth="200.0" spacing="10.0" style="-fx-border-width: 1 0 0 0; -fx-border-color: #2D2D2D;">
+         <children>
+            <Button mnemonicParsing="false" onAction="#saveForReport" styleClass="green-button" text="Сохранить для репорта" />
+            <Button layoutX="20.0" layoutY="10.0" minWidth="75.0" mnemonicParsing="false" onAction="#cancel" text="Отмена" />
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets bottom="15.0" right="20.0" top="10.0" />
+         </padding>
+      </HBox>
+   </children>
+</VBox>

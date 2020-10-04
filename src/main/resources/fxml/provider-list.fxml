@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox styleClass="background" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="200.0" spacing="10.0">
+         <children>
+            <Label maxWidth="1.7976931348623157E308" styleClass="title" text="Список поставщиков" HBox.hgrow="ALWAYS" />
+            <Button layoutX="20.0" layoutY="10.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" onAction="#close">
+               <styleClass>
+                  <String fx:value="action-button" />
+                  <String fx:value="close" />
+               </styleClass>
+            </Button>
+         </children>
+         <padding>
+            <Insets left="20.0" right="10.0" />
+         </padding>
+      </HBox>
+      <VBox spacing="10.0">
+         <children>
+            <ListView fx:id="providerList" prefHeight="300.0" prefWidth="200.0" />
+            <TextField fx:id="nameField" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="300.0" promptText="Название" />
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </VBox>
+      <AnchorPane>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <children>
+            <HBox alignment="CENTER_RIGHT" prefHeight="52.0" prefWidth="340.0" spacing="10.0" style="-fx-border-width: 1 0 0 0; -fx-border-color: #2D2D2D;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Button minWidth="80.0" mnemonicParsing="false" onAction="#create" styleClass="green-button" text="Новый" />
+                  <Button layoutX="20.0" layoutY="10.0" minWidth="80.0" mnemonicParsing="false" onAction="#edit" text="Изменить" />
+               </children>
+               <padding>
+                  <Insets bottom="15.0" right="20.0" top="10.0" />
+               </padding>
+            </HBox>
+            <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#delete" styleClass="red-button" text="Удалить" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="10.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

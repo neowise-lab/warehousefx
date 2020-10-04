@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="background" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox alignment="CENTER" layoutX="31.0" layoutY="28.0" maxHeight="1.7976931348623157E308" spacing="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+         <children>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../resource/css/icon/app-icon.png" />
+               </image>
+            </ImageView>
+            <Label style="-fx-font-size: 16pt;" styleClass="app-name" text="Warehouse" textFill="WHITE" />
+            <Label alignment="CENTER" layoutX="254.0" layoutY="94.0" lineSpacing="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="148.0" prefWidth="600.0" text="Warehouse - приложение для управления товарами на складе, магазине и пр. &#10;Версия: 1.0 Beta (0725200622)&#10;Жалол Имомаддинов &#10;" textAlignment="CENTER" textFill="WHITE">
+               <padding>
+                  <Insets bottom="10.0" left="40.0" right="40.0" top="20.0" />
+               </padding>
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <HBox alignment="CENTER_RIGHT" prefWidth="200.0" spacing="10.0" style="-fx-border-width: 1 0 0 0; -fx-border-color: #2D2D2D;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Button layoutX="20.0" layoutY="10.0" minWidth="75.0" mnemonicParsing="false" onAction="#close" text="Закрыть" />
+         </children>
+         <padding>
+            <Insets bottom="15.0" right="20.0" top="10.0" />
+         </padding>
+      </HBox>
+   </children>
+</AnchorPane>
