@@ -7,12 +7,15 @@ import com.neowise.warehouse.data.repository.RepositoryFactory
 import com.neowise.warehouse.ui.base.FXMLView
 import com.neowise.warehouse.ui.history.GiveOutDialog
 import com.neowise.warehouse.ui.history.ReceiveDialog
+import com.neowise.warehouse.util.doubleAsString
 import javafx.event.ActionEvent
 import javafx.fxml.FXML
 import javafx.scene.control.Button
+import javafx.scene.control.TableCell
 import javafx.scene.control.TableColumn
 import javafx.scene.control.TableView
 import javafx.scene.control.cell.PropertyValueFactory
+import javafx.util.Callback
 import java.net.URL
 import java.util.*
 
@@ -26,7 +29,7 @@ class Products : FXMLView("product-list", DARK_THEME) {
     @FXML
     private lateinit var descriptionColumn: TableColumn<Product, String>
     @FXML
-    private lateinit var volumeColumn: TableColumn<Product, String>
+    private lateinit var volumeColumn: TableColumn<Product, Double>
     @FXML
     private lateinit var unitColumn: TableColumn<Product, String>
 
@@ -55,10 +58,19 @@ class Products : FXMLView("product-list", DARK_THEME) {
 
         onProductChange = { println("Do nothing :)") }
 
-        nameColumn.cellValueFactory = PropertyValueFactory<Product, String>("name")
-        descriptionColumn.cellValueFactory = PropertyValueFactory<Product, String>("description")
-        volumeColumn.cellValueFactory = PropertyValueFactory<Product, String>("volume")
-        unitColumn.cellValueFactory = PropertyValueFactory<Product, String>("unit")
+        nameColumn.cellValueFactory = PropertyValueFactory("name")
+        descriptionColumn.cellValueFactory = PropertyValueFactory("description")
+        unitColumn.cellValueFactory = PropertyValueFactory("unit")
+        volumeColumn.cellValueFactory = PropertyValueFactory("volume")
+
+        volumeColumn.cellFactory = Callback {
+            object : TableCell<Product, Double>() {
+                override fun updateItem(item: Double?, empty: Boolean) {
+                    super.updateItem(item, empty)
+                    text = if (empty || item == null) "" else doubleAsString(item)
+                }
+            }
+        }
 
         table.selectionModel.selectedItemProperty().addListener { _, _, value ->
             onProductChange(value)

@@ -44,25 +44,29 @@ class App : Application() {
         }
     }
 
-    fun showMain() {
+    private fun showMain() {
         if (Configuration.connectDatabase()) {
             Main().show()
         }
     }
 
-    fun showDatabaseChanger() {
+    private fun showDatabaseChanger() {
         val databaseChanger = DatabaseChanger()
+
         databaseChanger.onOpen = {
             Configuration.changeDatabase(it)
             Main().show()
         }
+
         databaseChanger.onCreate = {
             Configuration.createDatabase(it)
             Main().show()
         }
+
         databaseChanger.onCancel = {
             exitProcess(0)
         }
+
         databaseChanger.show()
     }
 }
