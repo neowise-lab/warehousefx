@@ -6,7 +6,6 @@
 
 Регистрация продуктов, деление на категории и пр.
 
-
 Требуется Java 8. для Java выше 8, следует добавить в pom.xml проекта зависимости [openfx](https://mvnrepository.com/artifact/org.openjfx)
 
 ## Сборка
@@ -17,3 +16,5 @@
 
 Видео демонстрация:
 https://www.youtube.com/watch?v=Zwi80YVCEa4
+
+:warning: **Проект больше не развивается**
